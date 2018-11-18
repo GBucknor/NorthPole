@@ -12,7 +12,7 @@ import { Router} from '@angular/router';
 })
 export class EditComponent implements OnInit {
 
-  user$: Object
+  user$: any
 
   updateUser = function() {
     let user = {

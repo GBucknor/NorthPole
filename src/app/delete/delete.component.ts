@@ -11,7 +11,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./delete.component.scss']
 })
 export class DeleteComponent implements OnInit {
-  user$: Object
+  user$: any
 
   deleteUser = function() {
     this.data.deleteUser(this.user$.id).subscribe((data) => {})
