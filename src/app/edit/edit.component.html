@@ -1,0 +1,92 @@
+<div class="row">
+  <div class="col-lg-5 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <form name="form" novalidate>
+          <div class="form-group row">
+              <label class="col-lg-3 col-form-label form-control-label">First name</label>
+              <div class="col-lg-9">
+                  <input required id="firstName" class="form-control" type="text" value="{{ user$.firstName }}" placeholder="First Name"
+                  maxlength="20" />
+              </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+              <div class="col-lg-9">
+                  <input id="lastName" class="form-control" type="text" value="{{ user$.lastName }}" placeholder="Last Name" 
+                  maxlength="20" />
+              </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-lg-3 col-form-label form-control-label">Email</label>
+              <div class="col-lg-9">
+                  <input id="email" class="form-control" type="email" value="{{ user$.email }}" placeholder="{{ user$.email }}" />
+              </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-lg-3 col-form-label form-control-label">Phone Number</label>
+              <div class="col-lg-9">
+                  <input id="phone" class="form-control" type="tel" value="{{ user$.phone }}" placeholder="123456789"/>
+              </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Naughty?</label>
+            <div class="col-lg-9">
+                <select id="isNaughty" class="form-control" size="0">
+                    <option value="{{ user$.isNaughty }}">{{ user$.isNaughty }}</option>
+                    <option value="{{ !user$.isNaughty }}">{{ !user$.isNaughty }}</option>
+                </select>
+            </div>
+        </div>
+          <div class="form-group row">
+              <label class="col-lg-3 col-form-label form-control-label">Address</label>
+              <div class="col-lg-9">
+                  <input id="street" class="form-control" type="text" value="{{ user$.street }}" placeholder="Street" />
+              </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-lg-3 col-form-label form-control-label"></label>
+              <div class="col-lg-9">
+                  <input id="city" class="form-control" type="text" value="{{ user$.city }}" placeholder="City" />
+              </div>
+          </div>
+          <div class="form-group row">
+                <label class="col-lg-3 col-form-label form-control-label"></label>
+                <div class="col-lg-9">
+                    <input id="province" class="form-control" type="text" value="{{ user$.province }}" placeholder="Province/State" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-3 col-form-label form-control-label"></label>
+                <div class="col-lg-9">
+                    <input id="country" class="form-control" type="text" value="{{ user$.country }}" placeholder="Country" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-3 col-form-label form-control-label"></label>
+                <div class="col-lg-9">
+                    <input id="postalCode" class="form-control" type="text" value="{{ user$.postalCode }}" placeholder="Postal Code" />
+                </div>
+            </div>
+          <div class="form-group row">
+              <label class="col-lg-3 col-form-label form-control-label">Username</label>
+              <div class="col-lg-9">
+                  <input id="user" class="form-control" type="text" value="{{ user$.userName }}" placeholder="Username" />
+              </div>
+          </div>
+          <div class="col-lg-9">
+                <!-- <input type="reset" class="btn btn-secondary" value="Cancel" /> -->
+                <button id="submit" class="btn btn-primary" (click)="updateUser()">Save Changes</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <!--Google map-->
+    <agm-map [latitude]="user$.latitude" [longitude]="user$.longitude">
+      <agm-marker latitude="{{ user$.latitude }}" longitude="{{ user$.longitude }}"></agm-marker>
+    </agm-map>
+    <br>
+  </div>
+</div>

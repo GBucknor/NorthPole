@@ -1,0 +1,80 @@
+<form name="form" novalidate>
+  <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label">First name</label>
+      <div class="col-lg-9">
+          <input required id="firstName" class="form-control" type="text" value="" placeholder="First Name"
+          maxlength="20" />
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+      <div class="col-lg-9">
+          <input required id="lastName" class="form-control" type="text" value="" placeholder="Last Name" 
+          maxlength="20" />
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label">Email</label>
+      <div class="col-lg-9">
+          <input required id="email" class="form-control" type="email" value="" placeholder="Email" />
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label">Phone Number</label>
+      <div class="col-lg-9">
+          <input required id="phone" class="form-control" type="tel" value="" placeholder="123456789"/>
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label">Address</label>
+      <div class="col-lg-9">
+          <input required id="street" class="form-control" type="text" value="" placeholder="Street" />
+      </div>
+  </div>
+  <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label"></label>
+      <div class="col-lg-9">
+          <input required id="city" class="form-control" type="text" value="" placeholder="City" />
+      </div>
+  </div>
+  <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label"></label>
+        <div class="col-lg-9">
+            <input required id="province" class="form-control" type="text" value="" placeholder="Province/State" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label"></label>
+        <div class="col-lg-9">
+            <input required id="country" class="form-control" type="text" value="" placeholder="Country" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label"></label>
+        <div class="col-lg-9">
+            <input required id="postalCode" class="form-control" type="text" value="" placeholder="Postal Code" />
+        </div>
+    </div>
+  <div class="form-group row">
+      <label class="col-lg-3 col-form-label form-control-label">Username</label>
+      <div class="col-lg-9">
+          <input required id="user" class="form-control" type="text" value="" placeholder="Username" />
+      </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+    <div class="col-lg-9">
+        <input required id="pass" class="form-control" type="password" value="" placeholder="Password" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-lg-3 col-form-label form-control-label">Confirm Password</label>
+    <div class="col-lg-9">
+        <input required id="cPass" class="form-control" type="password" value="" ng-change="check(this)" placeholder="Password" />
+    </div>
+  </div>
+  <div class="col-lg-9">
+        <!-- <input type="reset" class="btn btn-secondary" value="Cancel" /> -->
+        <button id="submit" class="btn btn-primary" (click)="registerUser()">Register</button>
+    </div>
+</form>

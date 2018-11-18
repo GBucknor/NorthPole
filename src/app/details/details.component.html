@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-lg-5 mb-4">
+    <div class="card">
+      <div class="card-body">
+          <h2 class="card-title"><i class="fa fa-user"></i> {{ user$.userName }}</h2>
+          <h5 class="card-text">{{ user$.firstName }} {{ user$.lastName }} </h5>
+          <div class="list-group list-group-flush">
+            <li class="list-group-item">
+              <span class="card-text"><i class="fa fa-envelope"></i><strong>Email:</strong> {{ user$.email }}</span>
+            </li>
+            <li class="list-group-item">
+              <span class="card-text"><i class="fa fa-envelope"></i><strong>Naughty?:</strong> {{ user$.isNaughty }}</span>
+            </li>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <!--Google map-->
+    <agm-map [latitude]="user$.latitude" [longitude]="user$.longitude">
+      <agm-marker latitude="{{ user$.latitude }}" longitude="{{ user$.longitude }}"></agm-marker>
+    </agm-map>
+    <br>
+    <!--Buttons-->
+    <div class="row text-center">
+      <div class="col-md-6">
+        <a class="btn-floating blue accent-1"><i class="fa fa-map-marker"></i></a>
+        <p>{{ user$.city }} {{ user$.province }} {{ user$.postalCode }}</p>
+        <p>{{ user$.country }}</p>
+      </div>
+
+      <div class="col-md-6">
+        <a class="btn-floating blue accent-1"><i class="fa fa-phone"></i></a>
+        <p>{{ user$.phone }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="btn-group btn-group-lg">
+  <button routerLink="/edit/{{ user$.id }}" class="btn btn-outline-primary">Edit</button>
+  <button routerLink="/delete/{{ user$.id }}" class="btn btn-outline-danger">Delete</button>
+</div>
